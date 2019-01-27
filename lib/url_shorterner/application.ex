@@ -9,7 +9,8 @@ defmodule UrlShorterner.Application do
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts
-      UrlShorternerWeb.Endpoint
+      UrlShorternerWeb.Endpoint,
+      UrlShorterner.Storage.Supervisor
       # Starts a worker by calling: UrlShorterner.Worker.start_link(arg)
       # {UrlShorterner.Worker, arg},
     ]

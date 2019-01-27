@@ -5,7 +5,7 @@ defmodule UrlShorterner.Web do
 
   alias UrlShorterner.Repo
 
-  alias UrlShorterner.Web.Url
+  # alias UrlShorterner.Web.Url
 
   @doc """
   Returns the list of urls.
