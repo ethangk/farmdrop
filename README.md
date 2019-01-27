@@ -1,18 +1,11 @@
 # UrlShorterner
 
-To start your Phoenix server:
+I've setup docker and compose for this project. To run, just run `docker-compose up`
 
-  * Install dependencies with `mix deps.get`
-  * Start Phoenix endpoint with `mix phx.server`
+To send a request, it's necessary to include a `content-type` header:
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+```
+curl localhost:4000 -XPOST  -H "Content-Type: application/json" -d '{ "url": "http://www.farmdrop.com" }'
+```
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+I've implemented prepending `http` to the url in `UrlShorterner.Storage.Url`. I've opted for `http`, vs `https` as my assumption is that more websites will be supporting `http`.
